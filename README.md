@@ -1,4 +1,4 @@
-Features
+## Features
 
 Debounced Search
 
@@ -52,14 +52,13 @@ isPerson: Helper to differentiate between person and file items in the "all" tab
 
 ## Tech Stack
 
-
 React (UI)
 
 Context API (search state management)
 
 TailwindCSS (styling)
 
-How It Works
+## How It Works
 
 User types in the search input → term gets debounced.
 
