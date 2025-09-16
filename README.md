@@ -1,12 +1,73 @@
-# React + Vite
+Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Debounced Search
 
-Currently, two official plugins are available:
+Prevents excessive API calls by waiting until the user stops typing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Smooth and efficient search experience.
 
-## Expanding the ESLint configuration
+Multi-Tab Search
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Supports searching across:
+
+👤 People
+
+📂 Files
+
+💬 Chats
+
+📝 Lists
+
+Each tab shows filtered results for its category.
+
+All Results View
+
+Combines and displays results from all categories in one list.
+
+Empty State Handling
+
+Shows <term> not found message when no results are available in the selected tab.
+
+Graceful fallback when a category has no data.
+
+Loading State
+
+Displays skeleton loader while search results are being fetched.
+
+Dynamic Rendering
+
+Uses a mapping approach to dynamically render the correct component (PersonItem, FileItem, ChatsItem, ListItem) based on the active tab.
+
+Avoids repetitive code using dynamic prop passing.
+
+Unique Keys
+
+Ensures unique React keys using a combination of activeTab and id to prevent duplicate key warnings.
+
+Utility Functions
+
+filterData: Handles filtering logic for different datasets.
+
+isPerson: Helper to differentiate between person and file items in the "all" tab.
+
+Tech Stack
+
+React (UI)
+
+Context API (search state management)
+
+TailwindCSS (styling)
+
+How It Works
+
+User types in the search input → term gets debounced.
+
+debouncedTerm is shared via Context across all components.
+
+Each tab filters its data using filterData.
+
+Results are displayed via the right component dynamically.
+
+Skeleton loader is shown while results are loading.
+
+Empty message is shown if no results match the search.
