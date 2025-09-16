@@ -50,7 +50,8 @@ filterData: Handles filtering logic for different datasets.
 
 isPerson: Helper to differentiate between person and file items in the "all" tab.
 
-Tech Stack
+## Tech Stack
+
 
 React (UI)
 
