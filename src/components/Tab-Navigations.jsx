@@ -1,17 +1,43 @@
 import SettingsButton from "./Settings-Button";
-import { Users, File } from "lucide-react";
+import { Users, File, MessageCircle, List } from "lucide-react";
 import { useSearchContext } from "../hook/context";
 const TabNavigation = ({ counts }) => {
-  const { activeTab, setActiveTab } = useSearchContext();
+  const { activeTab, setActiveTab, settings } = useSearchContext();
   const tabs = [
-    { id: "all", label: "All", count: counts.all },
-    { id: "files", label: "Files", count: counts.files, icon: File },
-    { id: "people", label: "People", count: counts.people, icon: Users },
-  ];
+    { id: "all", label: "All", count: counts.all, isEnabled: settings.all },
+    {
+      id: "files",
+      label: "Files",
+      count: counts.files,
+      icon: File,
+      isEnabled: settings.files,
+    },
+    {
+      id: "people",
+      label: "People",
+      count: counts.people,
+      icon: Users,
+      isEnabled: settings.people,
+    },
+    {
+      id: "chats",
+      label: "Chats",
+      count: counts.chats,
+      icon: MessageCircle,
+      isEnabled: settings.chats,
+    },
+    {
+      id: "lists",
+      label: "Lists",
+      count: counts.lists,
+      icon: List,
+      isEnabled: settings.lists,
+    },
+  ].filter((tab) => tab.isEnabled);
 
   return (
     <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
-      <div className="flex space-x-6">
+      <div className="flex flex-1">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -20,7 +46,7 @@ const TabNavigation = ({ counts }) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center space-x-2 px-1 py-2 text-sm font-medium transition-colors relative ${
+              className={`flex items-center gap-0.5 space-x-2 px-1 py-2 text-sm font-medium transition-colors relative ${
                 isActive ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
               }`}
             >

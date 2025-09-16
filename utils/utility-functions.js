@@ -9,8 +9,9 @@ export const settingsItems = [
 
 
 export const filterData = (items, searchTerm) => {
+    if (!items) return [];
     if (!searchTerm) return items;
-    return items.filter((item) =>
+    return (items || []).filter((item) =>
         (item.name || item.title || "")
             .toLowerCase()
             .includes(searchTerm.toLowerCase())
@@ -18,4 +19,11 @@ export const filterData = (items, searchTerm) => {
 };
 
 export const isPerson = (item) => "status" in item && "avatar" in item;
+
+export const singularMap = {
+    people: "person",
+    files: "file",
+    chats: "chat",
+    lists: "list",
+};
 

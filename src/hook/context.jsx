@@ -9,6 +9,7 @@ export const SearchProvider = ({ children }) => {
   const [isCollapsed, setCollapsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [settings, setSettings] = useState({
+    all: true,
     files: true,
     people: true,
     chats: false,

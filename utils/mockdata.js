@@ -53,7 +53,53 @@ export const mockData = {
             icon: "folder",
             fileCount: "12 Files"
         }
-    ]
+    ],
+    chats: [
+        {
+            id: 1,
+            name: "Design Team",
+            participants: ["Caroline", "Adam", "Margareth"],
+            lastMessage: "Let’s finalize the slides for tomorrow ",
+            time: "5m ago",
+            unreadCount: 2,
+        },
+        {
+            id: 2,
+            name: "Kristinge Karand",
+            participants: ["Kristinge"],
+            lastMessage: "Can you review the PR?",
+            time: "12m ago",
+            unreadCount: 0,
+        },
+        {
+            id: 3,
+            name: "Frontend Squad",
+            participants: ["Adam", "Caroline", "You"],
+            lastMessage: "Bug fixed on staging ",
+            time: "1h ago",
+            unreadCount: 1,
+        },
+    ],
+    // lists: [
+    //     {
+    //         id: 1,
+    //         title: "Dribbble Launch Checklist",
+    //         description: "12 tasks · Due next week",
+    //         status: "In Progress",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Ideas Backlog",
+    //         description: "28 items",
+    //         status: "Open",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Personal Todos",
+    //         description: "5 tasks · 2 completed",
+    //         status: "Mixed",
+    //     },
+    // ],
 };
 
 

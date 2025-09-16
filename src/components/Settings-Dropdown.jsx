@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { settingsItems } from "../../utils/utility-functions";
 import { useSearchContext } from "../hook/context";
 

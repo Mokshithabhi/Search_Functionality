@@ -1,10 +1,9 @@
+import Wrapper from "../Wrapper";
+
 const PersonItem = ({ person, index, searchTerm }) => {
   return (
     <>
-      <div
-        className="flex items-center space-x-3 p-3 hover:bg-gray-50 transition-colors animate-in slide-in-from-left duration-300"
-        style={{ animationDelay: `${index * 50}ms` }}
-      >
+      <Wrapper index={index}>
         <div className="relative">
           <img
             src={person.avatar}
@@ -24,7 +23,7 @@ const PersonItem = ({ person, index, searchTerm }) => {
           </h3>
           <p className="text-xs text-gray-500 truncate">{person.status}</p>
         </div>
-      </div>
+      </Wrapper>
     </>
   );
 };

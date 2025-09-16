@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Folder, Play } from "lucide-react";
 import { HighlightText } from "./Person-Item";
 import { Copy, ExternalLink } from "lucide-react";
+import Wrapper from "../Wrapper";
 
 const FileItem = ({ file, index, searchTerm }) => {
   const [copied, setCopied] = useState(false);
@@ -15,10 +16,7 @@ const FileItem = ({ file, index, searchTerm }) => {
   };
 
   return (
-    <div
-      className="flex items-center space-x-3 p-3 hover:bg-gray-50 transition-colors animate-in slide-in-from-left duration-300"
-      style={{ animationDelay: `${index * 50}ms` }}
-    >
+    <Wrapper index={index}>
       {getIcon(file)}
 
       <div className="flex-1 min-w-0">
@@ -58,7 +56,7 @@ const FileItem = ({ file, index, searchTerm }) => {
           <ExternalLink size={16} />
         </button>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
